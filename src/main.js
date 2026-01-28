@@ -1,0 +1,23 @@
+import { createApp } from 'vue'
+import App from './App.vue'
+
+import PrimeVue from 'primevue/config'
+
+// 🔥 тема теперь отсюда
+import Lara from '@primevue/themes/lara'
+
+import TabMenu from 'primevue/tabmenu'
+import PanelMenu from 'primevue/panelmenu'
+
+
+
+
+const app = createApp(App)
+
+app.use(PrimeVue, {
+    theme: {
+        preset: Lara
+    }
+})
+
+app.mount('#app')
