@@ -6,11 +6,10 @@
       title="Не ГРНЗ"
       description="Посторонние надписи, бортовые номера и т.п."
       :images="[
-        'img/cancels/2_NO_GRNZ/1.jpg',
-        'img/cancels/2_NO_GRNZ/2.jpg',
-        'img/cancels/2_NO_GRNZ/3.jpg',
-        'img/cancels/2_NO_GRNZ/4.jpg'
-      ]"
+  { src: '/media/cancels/2_NO_GRNZ/1.jpg', caption: 'Надпись на лобовом стекле' },
+  { src: '/media/cancels/2_NO_GRNZ/2.jpg', caption: 'Бортовой номер автобуса' },
+  { src: '/media/cancels/2_NO_GRNZ/3.jpg', caption: 'Имя водителя на стекле' }
+]"
     />
 
     <!-- дальше копируешь еще 19 раз -->

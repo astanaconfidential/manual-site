@@ -9,6 +9,10 @@ import Lara from '@primevue/themes/lara'
 import TabMenu from 'primevue/tabmenu'
 import PanelMenu from 'primevue/panelmenu'
 
+import Galleria from 'primevue/galleria'
+
+
+
 
 
 
@@ -21,3 +25,4 @@ app.use(PrimeVue, {
 })
 
 app.mount('#app')
+app.component('Galleria', Galleria)
