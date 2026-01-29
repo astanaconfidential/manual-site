@@ -22,6 +22,7 @@ import Home from './pages/Home.vue'
 import Examples from './pages/Examples.vue'
 import Guides from './pages/Guides.vue'
 
+
 const activeIndex = ref(0)
 
 const items = [

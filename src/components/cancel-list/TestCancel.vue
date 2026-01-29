@@ -12,6 +12,19 @@
 ]"
     />
 
+    <CancelExample
+      id="VID_ERR"
+      title="Битое видео"
+      description="Описание к битому видео"
+      :images="[
+  { src: '/media/cancels/1_VID_ERR/1.mp4', caption: 'Комментарий к битому видео' },
+  { src: '/media/cancels/1_VID_ERR/2.mp4', caption: 'Бортовой номер автобуса' },
+  { src: '/media/cancels/1_VID_ERR/3.mp4', caption: 'Имя водителя на стекле' },
+  { src: '/media/cancels/1_VID_ERR/4.mp4', caption: 'Имя водителя на стекле' },
+  { src: '/media/cancels/1_VID_ERR/5.mp4', caption: 'Имя водителя на стекле' }
+]"
+    />
+
     <!-- дальше копируешь еще 19 раз -->
 
   </div>
