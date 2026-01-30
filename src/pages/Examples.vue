@@ -59,18 +59,41 @@ const scrollToCancel = (id) => {
 <style>
 .examples-layout {
   display: flex;
-  gap: 20px;
+  gap: 16px;
 }
 
 .examples-menu {
   position: sticky;
-  top: 20px;
-  width: 180px; /* было ~240 */
-  background: #0f172a; /* тёмно-синий, не чёрный */
-  border-radius: 14px;
-  padding: 12px 8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-  height: fit-content;
+  top: 16px;
+  width: 180px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+
+  background: #1f2933; /* близко к PrimeVue dark */
+
+  border-radius: 0 14px 14px 0; /* слева ровно */
+  padding: 10px 6px 16px 6px;
+
+  box-shadow: 4px 0 12px rgba(0,0,0,0.25);
+  
+}
+
+/* кастомный скролл */
+.examples-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.examples-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.examples-menu::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 6px;
+}
+
+.examples-menu::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
 }
 
 .examples-menu ul {
@@ -82,21 +105,21 @@ const scrollToCancel = (id) => {
 .examples-menu li {
   padding: 9px 10px;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 14px;
   color: #e5e7eb;
-  transition: all 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .examples-menu li:hover {
-  background: #1e293b;
+  background: #334155;
   color: #ffffff;
-  transform: translateX(3px);
 }
 
 .examples-content {
   flex: 1;
 }
+
 
 
 </style>
