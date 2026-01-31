@@ -57,22 +57,37 @@ const cancelMenu = [
 const activeId = ref(null)
 
 onMounted(() => {
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          activeId.value = entry.target.id
-        }
-      })
-    },
-    { threshold: 0.4 }
-  )
 
-  cancelMenu.forEach(item => {
-    const el = document.getElementById(item.id)
-    if (el) observer.observe(el)
+  // принудительно первая активная
+  activeId.value = cancelMenu[0].id
+
+  // ждём когда всё отрисуется
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              activeId.value = entry.target.id
+            }
+          })
+        },
+        {
+          rootMargin: '-120px 0px -60% 0px',
+          threshold: 0.1
+        }
+      )
+
+      cancelMenu.forEach(item => {
+        const el = document.getElementById(item.id)
+        if (el) observer.observe(el)
+      })
+
+    }, 300) // даём время медиа прогрузиться
   })
 })
+
 
 const scrollToCancel = (id) => {
   document.getElementById(id)?.scrollIntoView({

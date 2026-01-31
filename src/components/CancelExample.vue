@@ -151,6 +151,40 @@ const responsiveOptions = [
   line-height: 1.5;
 }
 
+.cancel__reason {
+  margin-bottom: 80px;
+  padding: 48px 40px;
+
+  background: #ffffff;
+  border-radius: 20px;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.06),
+    0 1px 3px rgba(0,0,0,0.04);
+
+  position: relative;
+}
+.cancel__reason::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0,0,0,0.12),
+    transparent
+  );
+}
+
+.examples-content {
+  background: #f8fafc;
+  padding: 30px 24px;
+  border-radius: 18px;
+}
+
 
 
 /* ===== VIDEO UX ===== */
