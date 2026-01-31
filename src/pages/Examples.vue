@@ -5,12 +5,14 @@
     <div class="examples-menu">
       <ul>
         <li
-          v-for="item in cancelMenu"
-          :key="item.id"
-          @click="scrollToCancel(item.id)"
-        >
-          {{ item.label }}
-        </li>
+  v-for="item in cancelMenu"
+  :key="item.id"
+  @click="scrollToCancel(item.id)"
+  :class="{ active: activeId === item.id }"
+>
+  {{ item.label }}
+</li>
+
       </ul>
     </div>
 
@@ -24,6 +26,10 @@
 
 <script setup>
 import CancelList from '../components/cancel-list/TestCancel.vue'
+import { ref, onMounted } from 'vue'
+
+
+
 
 const cancelMenu = [
   { label: 'Битое видео', id: 'VID_ERR' },
@@ -47,6 +53,26 @@ const cancelMenu = [
   { label: 'Рассинхрон', id: 'SYNC_ERR' },
   { label: 'Ведомые ТС', id: 'TOW_TS' }
 ]
+
+const activeId = ref(null)
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          activeId.value = entry.target.id
+        }
+      })
+    },
+    { threshold: 0.4 }
+  )
+
+  cancelMenu.forEach(item => {
+    const el = document.getElementById(item.id)
+    if (el) observer.observe(el)
+  })
+})
 
 const scrollToCancel = (id) => {
   document.getElementById(id)?.scrollIntoView({
@@ -120,6 +146,14 @@ const scrollToCancel = (id) => {
   flex: 1;
 }
 
-
+.examples-menu li.active {
+  background: rgba(59,130,246,0.25);
+  color: #fff;
+  font-weight: 600;
+  border-left: 3px solid #3b82f6;
+}
+.examples-menu li {
+  transition: background 0.25s ease, color 0.25s ease;
+}
 
 </style>

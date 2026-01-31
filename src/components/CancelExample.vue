@@ -1,8 +1,5 @@
 <template>
 
-<div class="main-title">
-<h1>Примеры отмен</h1>
-</div>
 
 
   <div class="cancel__reason" :id="id">
@@ -73,6 +70,8 @@
 <script setup>
 import { computed } from 'vue'
 
+
+
 const props = defineProps({
   id: String,
   title: String,
@@ -101,13 +100,7 @@ const responsiveOptions = [
 <style scoped>
 /* ===== MAIN ===== */
 
-.main-title {
-  text-align: center;
-  background-color: #1f2933;
-  padding: 2px 0;
-  margin-bottom: 100px;
-  
-}
+
 
 .gallery-wrapper {
   max-width: 1000px;
